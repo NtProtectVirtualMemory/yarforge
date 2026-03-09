@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="pe-lib\directories_impl.cpp" />
+    <ClCompile Include="pe-lib\image_impl.cpp" />
+    <ClCompile Include="pe-lib\rich_impl.cpp" />
+    <ClCompile Include="pe-lib\sections_impl.cpp" />
+    <ClCompile Include="yara\serializer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pe-lib\defs.hpp" />
+    <ClInclude Include="pe-lib\directories.hpp" />
+    <ClInclude Include="pe-lib\image.hpp" />
+    <ClInclude Include="pe-lib\rich.hpp" />
+    <ClInclude Include="pe-lib\sections.hpp" />
+    <ClInclude Include="pe-lib\pe.h" />
+    <ClInclude Include="yara\serializer.hpp" />
+  </ItemGroup>
+</Project>

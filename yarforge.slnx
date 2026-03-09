@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="yarforge/yarforge.vcxproj" Id="f37006af-8406-4561-a7bb-82cb5192437b" />
+</Solution>
