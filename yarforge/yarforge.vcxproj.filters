@@ -7,6 +7,7 @@
     <ClCompile Include="pe-lib\rich_impl.cpp" />
     <ClCompile Include="pe-lib\sections_impl.cpp" />
     <ClCompile Include="yara\serializer.cpp" />
+    <ClCompile Include="yara\features\strings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pe-lib\defs.hpp" />
@@ -16,5 +17,6 @@
     <ClInclude Include="pe-lib\sections.hpp" />
     <ClInclude Include="pe-lib\pe.h" />
     <ClInclude Include="yara\serializer.hpp" />
+    <ClInclude Include="yara\features\strings.hpp" />
   </ItemGroup>
 </Project>

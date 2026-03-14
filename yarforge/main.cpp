@@ -1,7 +1,6 @@
 #include <cstdio>
 #include <thread>
 
-#include "pe-lib/pe.h"
 #include "yara/serializer.hpp"
 
 template <typename Rep, typename Period>
@@ -14,14 +13,14 @@ int main(int argc, char* argv[])
 {
 	if (argc < 2)
 	{
-		printf("[!] Bad boy.");
+		printf("[!] No input file.");
 		wait(std::chrono::seconds(2));
 
 		return 1;
 	}
 
-	PE::Image sample(argv[1]);
+	yarforge::yara_rule signature(argv[1]);
+	wait(std::chrono::seconds(2));
 
 	return 0;
-
 }

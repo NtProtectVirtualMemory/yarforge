@@ -176,6 +176,7 @@
     <ClCompile Include="pe-lib\image_impl.cpp" />
     <ClCompile Include="pe-lib\rich_impl.cpp" />
     <ClCompile Include="pe-lib\sections_impl.cpp" />
+    <ClCompile Include="yara\features\strings.cpp" />
     <ClCompile Include="yara\serializer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +186,7 @@
     <ClInclude Include="pe-lib\pe.h" />
     <ClInclude Include="pe-lib\rich.hpp" />
     <ClInclude Include="pe-lib\sections.hpp" />
+    <ClInclude Include="yara\features\strings.hpp" />
     <ClInclude Include="yara\serializer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
