@@ -473,12 +473,14 @@ std::vector<std::string_view> PE::Utils::GetAsciiStrings(std::uint32_t min_lengt
 	return strings;
 }
 
-std::vector<std::wstring_view> PE::Utils::GetUnicodeStrings(std::uint32_t min_length) const noexcept
+std::vector<std::string_view> PE::Utils::GetUnicodeStrings(std::uint32_t min_length) const noexcept
 {
-	std::vector<std::wstring_view> strings;
+	std::vector<std::string_view> strings;
 
 	if (!m_image || m_image->Data().empty())
+	{
 		return strings;
+	}
 
 	const uint8_t* data = m_image->Data().data();
 	const size_t   size = m_image->Data().size();
@@ -523,16 +525,16 @@ std::vector<std::wstring_view> PE::Utils::GetUnicodeStrings(std::uint32_t min_le
 
 			const size_t wchar_count = (i - start) / 2;
 
-			if (wchar_count >= min_length &&
+			if (wchar_count >= min_length &&         
 				i + 1 < end &&
 				data[i] == 0x00 && data[i + 1] == 0x00)
 			{
 				strings.emplace_back(
-					reinterpret_cast<const wchar_t*>(data + start),
-					wchar_count);
+					reinterpret_cast<const char*>(data + start),
+					i - start);                       
 			}
 
-			i += 2; // Advance past null terminator
+			i += 2;
 		}
 	}
 

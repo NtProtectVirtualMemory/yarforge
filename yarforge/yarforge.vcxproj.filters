@@ -8,6 +8,8 @@
     <ClCompile Include="pe-lib\sections_impl.cpp" />
     <ClCompile Include="yara\serializer.cpp" />
     <ClCompile Include="yara\features\strings.cpp" />
+    <ClCompile Include="yara\features\byte-pattern.cpp" />
+    <ClCompile Include="yara\hash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pe-lib\defs.hpp" />
@@ -18,5 +20,6 @@
     <ClInclude Include="pe-lib\pe.h" />
     <ClInclude Include="yara\serializer.hpp" />
     <ClInclude Include="yara\features\strings.hpp" />
+    <ClInclude Include="yara\features\byte-pattern.hpp" />
   </ItemGroup>
 </Project>

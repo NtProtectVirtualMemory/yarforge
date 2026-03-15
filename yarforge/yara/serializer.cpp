@@ -5,6 +5,22 @@
 
 namespace yarforge
 {
+	static std::string escape_for_yara(const std::string& s)
+	{
+		std::string result;
+		result.reserve(s.size());
+		for (char c : s)
+		{
+			if (c == '"')
+				result += "\\\"";
+			else if (c == '\\')
+				result += "\\\\";
+			else
+				result += c;
+		}
+		return result;
+	}
+
 	void yara_rule::serialize()
 	{
 		int counter{ 0 }; // very important counter!
@@ -24,7 +40,7 @@ namespace yarforge
 			rule << "\n\tstrings:";
 			for (const auto& [c, m] : m_strings)
 			{
-				rule << "\n\t\t$s" << counter++ << " = \"" << c << "\" " << m;
+				rule << "\n\t\t$s" << counter++ << " = \"" << escape_for_yara(c) << "\" " << m;
 			}
 			counter = 0;
 		}
